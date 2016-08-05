@@ -2,10 +2,9 @@
 Redigerings modulen för grundämnen.se. Denna modul används för att visa och hantera redigerings delen av sidan som elever och lärare kan använda för att fylla på grundämnen.se med information samt använda det i lärosyften om man ska lära sig om ämnena.
 
 ## Användning
-```node app.js```
-för att starta modulen. Kräver att API modulen är igång och fungerar.
+`node app.js` för att starta modulen. Kräver att API modulen är igång och fungerar.
 
-```data/``` mappen innehåller flera konfigurations filer för diverse delar.
+`data/` mappen innehåller flera konfigurations filer för diverse delar.
 
 ## Mer Information
 Mer information kan du hitta här: [Grundamnen-SE/pesys](https://github.com/Grundamnen-SE/pesys)
