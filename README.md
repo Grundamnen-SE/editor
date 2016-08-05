@@ -1,4 +1,4 @@
-# editor
+# editor [![Build Status](https://travis-ci.org/Grundamnen-SE/editor.svg?branch=master)](https://travis-ci.org/Grundamnen-SE/editor)
 Redigerings modulen för grundämnen.se. Denna modul används för att visa och hantera redigerings delen av sidan som elever och lärare kan använda för att fylla på grundämnen.se med information samt använda det i lärosyften om man ska lära sig om ämnena.
 
 ## Användning
