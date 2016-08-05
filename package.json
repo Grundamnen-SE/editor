@@ -1,0 +1,19 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "Grundämnen.se redigerings modul",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Grundamnen-SE/editor.git"
+  },
+  "author": "Joar Classon och Gustav Ekner",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Grundamnen-SE/editor/issues"
+  },
+  "homepage": "https://github.com/Grundamnen-SE/editor#readme"
+}
