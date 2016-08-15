@@ -1,4 +1,6 @@
-$(document).on('ready', function(e){
+var playbtn; // Stoppa in med ajax
+
+$(document).on('ready', function(e) {
   var allelms = [];
   $(".tab1 td").each(function(i,o){
   if (!$(this).hasClass("td-extend") &&
