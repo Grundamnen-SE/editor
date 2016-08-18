@@ -176,46 +176,5 @@ app.get('/:elm', function(req, res, next){
   }
 });
 
-// TODO
-// API aktiga funktioner: få elementdata i JSON (typ direkt från Mongo), vilka som har hjälpt till, och lite annat smått och gott.
-// Vi bör lägga till system för att verifiera vem som frågar efter information och kanske lägga till rate-limiting.
-// Denna kod ska flyttas till API modulen
-// Kolla in https://github.com/Grundamnen-SE/pesys/issues/9
-app.get('/api/element/:elm', function(req, res){
-  if (isInArray(req.params.elm, elements)) {
-    db.collection('elements').findOne({element: req.params.elm}, {}, function(err, data){
-      if (err) console.log(err);
-      if (data == null) {
-        res.send({"error": "element data not found", "code": 56});
-      } else {
-        var options = {fields:{password:0, _id: 0}};
-        var users = [db.collection('users').findOne({id: data.author}, options), db.collection('users').findOne({id: data.lasteditedby}, options), db.collection('users').findOne({id: data.approvedby}, options)];
-        for (var i = 0; i < data.alleditors.length; i++) {
-          users.push(db.collection('users').findOne({id: data.alleditors[i]}, options));
-        }
-        Promise.all(users).then(function(allData){
-          var author = allData[0];
-          var lasteditedby = allData[1];
-          var approvedby = allData[2];
-          var alleditors = [];
-          for (var i = 3; i < allData.length; i++) {
-            alleditors.push(allData[i]);
-          }
-          data.author = author;
-          data.lasteditedby = lasteditedby;
-          data.approvedby = approvedby;
-          data.alleditors = alleditors;
-          if (req.session.user != null && req.session.user.logged_in) {
-            res.send({logged_in: true, data: data});
-          } else {
-            res.send({data: data});
-          }
-        });
-      }
-    });
-  } else {
-    res.send({"error": "the value specified as an element is not an element"});
-  }
-});
 
 module.exports.app = app;
